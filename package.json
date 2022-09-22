@@ -1,0 +1,36 @@
+{
+  "name": "wapclick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/main.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=production gulp start",
+    "build": "cross-env NODE_ENV=production gulp build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
+    "autoprefixer": "latest",
+    "browser-sync": "latest",
+    "cross-env": "latest",
+    "del": "6.1.1",
+    "gulp": "latest",
+    "gulp-babel": "latest",
+    "gulp-csso": "latest",
+    "gulp-dart-sass": "latest",
+    "gulp-html-prettify": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-if": "latest",
+    "gulp-newer": "latest",
+    "gulp-plumber": "latest",
+    "gulp-postcss": "latest",
+    "gulp-posthtml": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "posthtml-include": "latest",
+    "postcss": "latest"
+  }
+}

@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Medium'), local('Inter-Medium'),
+        url('../fonts/subset-Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Light'), local('Inter-Light'),
+        url('../fonts/subset-Inter-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Bold'), local('Inter-Bold'),
+        url('../fonts/subset-Inter-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('../fonts/subset-Inter-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Medium Italic'), local('Inter-MediumItalic'),
+        url('../fonts/subset-Inter-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter Semi Bold'), local('Inter-SemiBold'),
+        url('../fonts/subset-Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk Cyr';
+    src: local('DrukCyr-Bold'),
+        url('../fonts/subset-DrukCyr-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk Cyr';
+    src: local('DrukCyr-Heavy'),
+        url('../fonts/subset-DrukCyr-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk Cyr';
+    src: local('DrukCyr-Medium'),
+        url('../fonts/subset-DrukCyr-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
