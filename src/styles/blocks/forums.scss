@@ -1,8 +1,19 @@
 .forums__container {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding: 30px 15px 20px;
     background-color: $main-dark;
     border-radius: 15px;
+
+    @media (min-width: $bp-tablet) {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 40px;
+        margin: 0 20px;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+    }
 }
 
 .forums__heading {
@@ -14,18 +25,58 @@
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    @media (min-width: $bp-tablet) {
+        font-size: 82px;
+        line-height: 82px;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-column: 2 / 3;
+        grid-row: 1;
+        margin-top: -14px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        font-size: 120px;
+        line-height: 120px;
+        margin-top: -20px;
+    }
 }
 
 .forums__arrows {
     display: flex;
     align-items: center;
+    gap: 15px;
     margin: 10px 0;
+
+    @media (min-width: $bp-tablet) {
+        align-items: flex-end;
+        margin: 5px 0;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-template-columns: 2 / 3;
+        grid-row: 2;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
 }
 
 .forums__arrow {
     transform: rotate(90deg);
     width: 16px;
     fill: #fff;
+
+    @media (min-width: $bp-tablet) {
+        width: 24px;
+    }
+
+    @media (min-width: $bp-desktop) {
+        width: 16px;
+        transform: rotate(-180deg);
+    }
 }
 
 .forums__list {
@@ -34,6 +85,22 @@
     gap: 15px;
     padding: 0;
     list-style: none;
+
+    @media (min-width: $bp-tablet) {
+        grid-column: 1 / 3;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px 0 0;
+        margin-bottom: 40px;
+        border-top: 1px solid #fff;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 .forums__item-link {
@@ -44,6 +111,14 @@
     font-size: 0;
     border-radius: 6px;
     background-color: rgba(#fff, 0.05);
+
+    @media (min-width: $bp-tablet) {
+        height: 100px;
+    }
+
+    @media (min-width: $bp-desktop) {
+        height: 100%;
+    }
 }
 
 .forums__item-image {
@@ -62,6 +137,45 @@
 
 .media {
     margin-bottom: 40px;
+
+    @media (min-width: $bp-tablet) {
+        grid-column: 1 / 3;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-column: 1;
+        margin-top: 60px;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        position: relative;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: $bp-widescreen) {
+    .media__list::after,
+    .media__list::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 36px;
+        height: 36px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .media__list::before {
+        left: 0;
+        border-bottom-left-radius: 8px;
+        border-left: 1px solid #fff;
+    }
+
+    .media__list::after {
+        right: 0;
+        border-bottom-right-radius: 8px;
+        border-right: 1px solid #fff;
+    }
 }
 
 .media__subheading {
@@ -71,6 +185,15 @@
     border-right: 1px solid #fff;
     border-top-right-radius: 8px;
     border-top-left-radius: 6px;
+
+    @media (min-width: $bp-tablet) {
+        margin-bottom: 25px;
+    }
+
+    @media (min-width: $bp-desktop) {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
 }
 
 .media__subheading-text {
@@ -84,6 +207,10 @@
     text-transform: uppercase;
     background-color: #fff;
     border-radius: 6px 0 6px 6px;
+
+    @media (min-width: $bp-widescreen) {
+        font-size: 24px;
+    }
 }
 
 .media__subheading-text::after {
@@ -107,7 +234,19 @@
     align-items: stretch;
     gap: 10px;
     padding: 0;
+    margin: 0;
     list-style: none;
+
+    @media (min-width: $bp-tablet) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        padding: 0 40px;
+        gap: 40px;
+    }
 }
 
 .media__item {
@@ -122,17 +261,49 @@
     gap: 20px;
     padding: 20px;
     text-decoration: none;
+
+    @media (min-width: $bp-tablet) {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 40px 20px 20px;
+    }
+}
+
+.media__item-logo-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 160px;
+    height: 32px;
+
+    @media (min-width: $bp-tablet) {
+        align-self: flex-start;
+        max-width: 100%;
+    }
 }
 
 .media__item-logo {
     width: auto;
-    max-width: 160px;
-    height: auto;
-    max-height: 32px;
+    max-height: 100%;
+
+    @media (min-width: $bp-tablet) {
+        max-width: 100%;
+    }
 }
 
 .media__item-subject {
     display: none;
+
+    @media (min-width: $bp-tablet) {
+        display: block;
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: $grey;
+    }
 }
 
 .media__item-arrow {
@@ -140,6 +311,12 @@
     width: 8px;
     filter: drop-shadow(0 0 0 transparent);
     transition: filter 0.3s ease-out;
+
+    @media (min-width: $bp-tablet) {
+        order: 4;
+        align-self: flex-end;
+        margin-top: auto;
+    }
 }
 
 .media__item-text {
@@ -151,6 +328,11 @@
     line-height: 20px;
     color: $main-dark;
     transition: color 0.3s ease-out;
+
+    @media (min-width: $bp-widescreen) {
+        font-size: 16px;
+        line-height: 22px;
+    }
 }
 
 .media__item-link:hover .media__item-text {
@@ -163,11 +345,39 @@
 
 .vacations {
     position: relative;
+    display: block;
     height: 330px;
     padding: 20px;
     background-color: $yellow;
     border-radius: 15px;
     border-top-left-radius: 0;
+    text-decoration: none;
+
+    @media (min-width: $bp-tablet) {
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: flex-end;
+        padding: 40px;
+        height: auto;
+    }
+
+    @media (min-width: $bp-desktop) {
+        grid-column: 2 / 3;
+        margin-top: 60px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        padding: 50px;
+    }
+}
+
+.vacations__inner {
+    @media (min-width: $bp-tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 240px;
+    }
 }
 
 .vacations__heading {
@@ -175,12 +385,30 @@
     font-family: "Druk Cyr", sans-serif;
     color: $main-dark;
     letter-spacing: 1px;
+
+    @media (min-width: $bp-tablet) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        margin-bottom: 24px;
+    }
 }
 
 .vacations__heading-number {
     font-weight: 900;
     font-size: 60px;
     line-height: 1;
+
+    @media (min-width: $bp-tablet) {
+        font-size: 82px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        font-size: 120px;
+    }
 }
 
 .vacations__heading-text {
@@ -188,6 +416,16 @@
     font-weight: 500;
     font-size: 46px;
     text-transform: uppercase;
+
+    @media (min-width: $bp-tablet) {
+        margin-left: 0;
+        font-size: 50px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        font-size: 64px;
+        line-height: 1;
+    }
 }
 
 .vacations__subheading {
@@ -197,10 +435,27 @@
     font-weight: 400;
     line-height: 22px;
     color: $main-dark;
+
+    @media (min-width: $bp-widescreen) {
+        margin-bottom: 35px;
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 .vacations__btn {
+    display: inline-block;
     width: 120px;
+    margin-left: 0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.vacations:hover .vacations__btn {
+    @media (min-width: $bp-tablet) {
+        margin-left: 120px;
+        color: $main-dark;
+    }
 }
 
 .vacations__image {
@@ -208,4 +463,15 @@
     bottom: 0;
     right: -14px;
     width: 230px;
+
+    @media (min-width: $bp-tablet) {
+        right: auto;
+        left: -30px;
+        width: 345px;
+    }
+
+    @media (min-width: $bp-widescreen) {
+        left: -40px;
+        width: 470px;
+    }
 }
