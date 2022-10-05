@@ -1,0 +1,26 @@
+.ticker {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 85px;
+    overflow-x: hidden;
+}
+
+.ticker__body {
+    height: 62px;
+    width: auto;
+    animation: slide 30s infinite linear;
+
+    @media (min-width: $bp-tablet) {
+        height: 68px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        height: 85px;
+    }
+}
+
+@keyframes slide {
+    100% {
+        transform: translateX(-100%)
+    }
+  }
