@@ -14,6 +14,51 @@ body, html {
     margin: 0;
 }
 
+body {
+    position: relative;
+    background-image: url("../img/bg_clouds.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 0;
+    animation: zoom-out 20s ease-in-out infinite alternate;
+    overflow-x: hidden;
+}
+
+@keyframes zoom-out {
+    from {
+        background-size: 100% auto;
+    }
+    to {
+        background-size: 130% auto;
+    }
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: 200vw;
+    background-image: url("../img/bg_clouds_small.png");
+    background-repeat: repeat-x;
+    background-size: 100vw auto;
+    background-position: 0 bottom;
+    mix-blend-mode: color-dodge;
+    animation: slide 30s ease-in-out infinite;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 img {
     width: 100%;
     height: auto;
@@ -37,12 +82,14 @@ button {
 .container {
     width: 100%;
     padding: 0 15px;
+    margin: 0 auto;
 
     @media (min-width: $bp-tablet) {
         padding: 0 20px;
     }
 
     @media (min-width: $bp-laptop) {
+        max-width: 1400px;
         padding: 0 40px;
     }
 }
