@@ -14,11 +14,16 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr auto auto;
-    grid-gap: 10px 15px;
+    gap: 10px 15px;
 
     @media (min-width: $bp-tablet) {
         grid-template-columns: 1fr auto auto auto;
         gap: 20px 15px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        max-width: none;
+        padding: 0 40px;
     }
 }
 

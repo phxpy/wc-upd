@@ -18,44 +18,22 @@ body {
     position: relative;
     background-image: url("../img/bg_clouds.png");
     background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 0 0;
-    animation: zoom-out 20s ease-in-out infinite alternate;
+    background-size: auto 140vh;
+    background-position: 0 -280px;
+    animation: zoom-out-mobile 20s ease-in-out infinite alternate;
     overflow-x: hidden;
+
+    @media (min-width: $bp-laptop) {
+        background-position: 0 -200px;
+    }
 }
 
-@keyframes zoom-out {
+@keyframes zoom-out-mobile {
     from {
-        background-size: 100% auto;
+        background-size: auto 140vh;
     }
     to {
-        background-size: 130% auto;
-    }
-}
-
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    display: block;
-    width: 200vw;
-    background-image: url("../img/bg_clouds_small.png");
-    background-repeat: repeat-x;
-    background-size: 100vw auto;
-    background-position: 0 bottom;
-    mix-blend-mode: color-dodge;
-    animation: slide 30s ease-in-out infinite;
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
+        background-size: auto 170vh;
     }
 }
 
