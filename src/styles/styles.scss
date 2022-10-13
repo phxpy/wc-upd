@@ -1,10 +1,14 @@
+@import "libraries/swiper-bundle.min";
+
 @import "common/variables";
 @import "common/global";
 @import "common/fonts";
 
 @import "blocks/header";
 @import "blocks/hero";
+@import "blocks/about";
 @import "blocks/forums";
 @import "blocks/ticker";
 @import "blocks/faq";
 @import "blocks/footer";
+

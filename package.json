@@ -4,7 +4,7 @@
   "description": "",
   "main": "js/main.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=production gulp start",
+    "dev": "cross-env NODE_ENV=development gulp start",
     "build": "cross-env NODE_ENV=production gulp build"
   },
   "keywords": [],
