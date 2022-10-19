@@ -36,7 +36,7 @@
     background-color: #fff;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
+    &:not(.swiper-button-disabled):hover {
         background-color: $green;
     }
 }
@@ -50,8 +50,17 @@
     stroke: $green;
     transition: all 0.3s ease-in-out;
 
-    .reviews__slider-btn:hover & {
+    .reviews__slider-btn:not(.swiper-button-disabled):hover & {
         stroke: #fff;
+    }
+}
+
+.reviews__slider-btn.swiper-button-disabled {
+    border-color: $light-grey;
+    cursor: default;
+
+    & .reviews__slider-btn-icon {
+        stroke: $light-grey;
     }
 }
 

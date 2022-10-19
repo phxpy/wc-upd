@@ -53,8 +53,6 @@
 // "Meetings" swiper initialization
 
 (function() {
-    const swiperScrollbar = document.querySelector(".meetings__scrollbar")
-
     const swiper = new Swiper('.meetings__slider', {
         // Optional parameters
         slidesPerView: "auto",
@@ -64,6 +62,12 @@
             el: '.meetings__scrollbar'
         },
         breakpoints: {
+            320: {
+                spaceBetween: 15,
+                scrollbar: {
+                    enabled: true
+                }
+            },
             768: {
                 spaceBetween: 20,
                 scrollbar: {
