@@ -1,0 +1,244 @@
+.meetings {
+    margin-top: 25px;
+
+    @media (min-width: $bp-tablet) {
+        margin-top: 40px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        display: flex;
+        align-items: stretch;
+        padding-left: max(40px, calc((100% - 1320px) / 2));
+    }
+}
+
+.meetings__heading {
+    @media (min-width: $bp-laptop) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.meetings__description,
+.meetings__slider-btns {
+    display: none;
+}
+
+.meetings__description {
+    @media (min-width: $bp-laptop) {
+        display: block;
+        width: 400px;
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        line-height: 26px;
+        color: $main-dark;
+    }
+}
+
+.meetings__slider-btns {
+    @media (min-width: $bp-laptop) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 100px;
+        padding-left: 240px;
+    }
+}
+
+.meetings__slider-btn {
+    display: block;
+    width: 76px;
+    height: 76px;
+    font-size: 0;
+    border: 1px solid $green;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: $green;
+    }
+}
+
+.meetings__slider-btn--prev {
+    transform: rotate(180deg);
+}
+
+.meetings__slider-btn-icon {
+    width: 12px;
+    stroke: $green;
+    transition: all 0.3s ease-in-out;
+
+    .meetings__slider-btn:hover & {
+        stroke: #fff;
+    }
+}
+
+.meetings__slider-wrap {
+    padding: 0 15px;
+
+    @media (min-width: $bp-tablet) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        position: relative;
+        padding-bottom: 10px;
+        padding-top: 35px;
+        padding-right: 15px;
+        overflow: hidden;
+    }
+}
+
+.meetings__slider-wrap::before {
+    @media (min-width: $bp-laptop) {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        display: block;
+        width: 200px;
+        background-image: linear-gradient(to right, #fff, #fff 20%, transparent);
+        pointer-events: none;
+    }
+}
+
+.meetings__slider {
+    overflow: visible;
+}
+
+.meetings__slider-wrapper {
+    padding: 0;
+    margin-bottom: 30px;
+    list-style: none;
+
+    @media (min-width: $bp-tablet) {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.meetings__slide-placeholder {
+    display: none;
+
+    @media (min-width: $bp-laptop) {
+        display: block;
+        width: 100px;
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    min-height: 370px;
+    padding: 25px;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px rgba(#000, 0.1);
+    overflow: hidden;
+}
+
+.card__date,
+.card__city {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: $main-dark;
+}
+
+.card__city {
+    padding: 3px 10px 4px;
+    border: 1px solid $main-dark;
+    border-radius: 100px;
+}
+
+.card__logo {
+    flex-grow: 1;
+    width: 180px;
+}
+
+.card__heading {
+    margin: 0;
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: $main-dark;
+    text-transform: uppercase;
+
+    &--light {
+        padding: 0 25px;
+        color: #fff;
+    }
+
+    @media (min-width: $bp-tablet) {
+        font-size: 34px;
+        line-height: 34px;
+    }
+}
+
+.card__details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 0 0;
+    background-image: url("../img/card_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.2s ease-out;
+
+    .card:hover &,
+    &:hover {
+        transform: translateY(0);
+    }
+}
+
+.card__description {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 25px;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.card__btn {
+    padding-top: 12px;
+    padding-bottom: 14px;
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    background-color: $green;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-out;
+
+    &:hover {
+        color: $main-dark;
+    }
+}
+
+.swiper-horizontal > .meetings__scrollbar {
+    bottom: -27px;
+}

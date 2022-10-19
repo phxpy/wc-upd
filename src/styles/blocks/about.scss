@@ -256,14 +256,6 @@
     margin-top: 5px;
 }
 
-.about__swiper-scrollbar-wrapper {
-    padding: 0 15px;
-}
-
-.swiper-horizontal > .swiper-scrollbar,
-.swiper-scrollbar.swiper-scrollbar-horizontal {
-    bottom: 0;
-    width: 200%;
-    left: 15px;
-    right: 15px;
+.swiper-horizontal > .about__scrollbar {
+    bottom: 1px;
 }
