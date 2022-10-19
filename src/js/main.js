@@ -26,7 +26,7 @@
     let swiper;
 
     const enableSwiper = function() {
-        swiper = new Swiper('.swiper', {
+        swiper = new Swiper('.about__slider', {
             // Optional parameters
             slidesPerView: "auto",
             spaceBetween: 15,
@@ -58,4 +58,78 @@
 
     checkWindowWidth()
     window.onresize = checkWindowWidth
+})();
+
+// "Meetings" swiper initialization
+
+(function() {
+    const swiperScrollbar = document.querySelector(".meetings__scrollbar")
+
+    const swiper = new Swiper('.meetings__slider', {
+        // Optional parameters
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.meetings__scrollbar',
+            scrollbarDraggable: false,
+            scrollbarHide: false,
+            dragSize: "100"
+        },
+        on: {
+            setTranslate(sw, translate) {
+                // swiperScrollbar.style.left = sw.passedParams.spaceBetween + translate * ((sw.virtualSize - swiperScrollbar.offsetWidth) / sw.virtualSize) + "px"
+                swiperScrollbar.style.left = sw.passedParams.spaceBetween + swiperScrollbar.offsetWidth * (translate / sw.virtualSize) + "px"
+            }
+        },
+        breakpoints: {
+            768: {
+                spaceBetween: 20,
+                scrollbar: {
+                    enabled: false
+                },
+                navigation: {
+                    nextEl: '.meetings__slider-btn--next',
+                    prevEl: '.meetings__slider-btn--prev',
+                }
+            }
+        }
+    });
+})();
+
+// Reviews swiper init
+
+(function() {
+    const swiper = new Swiper('.reviews__slider', {
+        // Optional parameters
+        slidesPerView: "1",
+        spaceBetween: 30,
+        // And if we need scrollbar
+        pagination: {
+            el: ".reviews__pagination",
+            type: "bullets"
+        },
+        breakpoints: {
+            768: {
+                spaceBetween: 40,
+                pagination: {
+                    enabled: false
+                },
+                navigation: {
+                    nextEl: '.reviews__slider-btn--next',
+                    prevEl: '.reviews__slider-btn--prev',
+                }
+            },
+            1200: {
+                spaceBetween: 1000,
+                pagination: {
+                    enabled: false
+                },
+                navigation: {
+                    nextEl: '.reviews__slider-btn--next',
+                    prevEl: '.reviews__slider-btn--prev',
+                }
+            }
+        }
+    });
 })();
