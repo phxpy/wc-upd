@@ -1,0 +1,124 @@
+.menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    padding-top: 29px;
+    padding-bottom: 25px;
+    background-image: url("../img/menu_bg-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: right 0;
+    background-size: cover;
+    transition: left 0.3s ease-in-out;
+
+    &--opened {
+        left: 0;
+    }
+
+    @media (min-width: $bp-tablet) {
+        padding-top: 26px;
+        background-image: url("../img/menu_bg-tablet.jpg");
+    }
+
+    @media (min-width: $bp-laptop) {
+        padding-top: 48px;
+        background-image: url("../img/menu_bg-laptop.jpg");
+    }
+}
+
+.menu__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+
+    @media (min-width: $bp-laptop) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 130px 190px;
+        height: auto;
+    }
+}
+
+.menu__btns-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @media (min-width: $bp-laptop) {
+        grid-column: 1 / 3;
+    }
+}
+
+.nav {
+    align-self: stretch;
+}
+
+.nav__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 190px;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: $bp-laptop) {
+        grid-template-columns: 1fr auto;
+        margin: 0;
+    }
+}
+
+.nav__link {
+    font-family: "Druk Cyr", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(#fff, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $green;
+    }
+
+    @media (min-width: $bp-tablet) {
+        font-size: 68px;
+        line-height: 68px;
+    }
+}
+
+.menu__contacts-socials-wrap {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media (min-width: $bp-laptop) {
+        flex-direction: column-reverse;
+    }
+}
+
+.menu .contacts {
+    margin-top: 0;
+}
+
+.menu .socials {
+    @media (min-width: $bp-laptop) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 0;
+    }
+}
+
+.menu .contacts__list {
+    grid-template-columns: 1fr;
+
+    @media (min-width: $bp-tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+}

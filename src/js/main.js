@@ -1,3 +1,22 @@
+// menu
+
+(function() {
+    const menu = document.querySelector(".menu");
+    const menuToggle = document.querySelector(".header__menu-btn");
+
+    menuToggle.addEventListener("click", () => {
+        if (!menuToggle.classList.contains("header__menu-btn--closed")) {
+            menuToggle.classList.add("header__menu-btn--closed")
+            menu.classList.add("menu--opened")
+            blockBodyScroll(true)
+        } else {
+            menuToggle.classList.remove("header__menu-btn--closed")
+            menu.classList.remove("menu--opened")
+            blockBodyScroll(false)
+        }
+    })
+})();
+
 // ticker cloning
 
 (function() {
@@ -118,3 +137,11 @@
         }
     });
 })();
+
+function blockBodyScroll(state) {
+    if (state) {
+        document.body.classList.add("blocked")
+    } else {
+        document.body.classList.remove("blocked")
+    }
+}
