@@ -1,3 +1,12 @@
+// polifill to fix vh units for some modals
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 // menu
 
 (function() {
@@ -162,10 +171,93 @@
     });
 })();
 
+// form open
+
+(function() {
+    const signupBtns = document.querySelectorAll(".btn--signup");
+    const signinBtns = document.querySelectorAll(".btn--signin");
+    const formSignup = document.querySelector(".form-signup");
+    const formSignin = document.querySelector(".form-signin");
+    const formRestore = document.querySelector(".form-restore");
+
+    signupBtns.forEach(btn => {
+        btn.addEventListener("click", openSingupForm)
+    })
+
+    signinBtns.forEach(btn => {
+        btn.addEventListener("click", openSinginForm)
+    })
+
+    function openSinginForm() {
+        formSignin.classList.add("form--opened")
+        blockBodyScroll(true)
+
+        formSignin.querySelector(".form__backdrop").addEventListener("click", () => {
+            formSignin.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formSignin.querySelector(".form__controls-forget").addEventListener("click", e => openRestoreForm(e))
+
+        formSignin.querySelector(".form__close-btn").addEventListener("click", () => {
+            formSignin.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formSignin.querySelector(".form__bottom-link").addEventListener("click", () => {
+            formSignin.classList.remove("form--opened")
+            openSingupForm()
+        })
+    }
+
+    function openSingupForm() {
+        formSignup.classList.add("form--opened")
+        blockBodyScroll(true)
+
+        formSignup.querySelector(".form__backdrop").addEventListener("click", () => {
+            formSignup.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formSignup.querySelector(".form__close-btn").addEventListener("click", () => {
+            formSignup.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formSignup.querySelector(".form__bottom-link").addEventListener("click", () => {
+            formSignup.classList.remove("form--opened")
+            openSinginForm()
+        })
+    }
+
+    function openRestoreForm(e) {
+        e.preventDefault()
+        formSignin.classList.remove("form--opened")
+        formRestore.classList.add("form--opened")
+
+        formRestore.querySelector(".form__backdrop").addEventListener("click", () => {
+            formRestore.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formRestore.querySelector(".form__close-btn").addEventListener("click", () => {
+            formRestore.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        formRestore.querySelector(".form__bottom-link").addEventListener("click", () => {
+            formRestore.classList.remove("form--opened")
+            openSingupForm()
+        })
+    }
+})();
+
 function blockBodyScroll(state) {
     if (state) {
         document.body.classList.add("blocked")
+        document.documentElement.classList.add("blocked")
     } else {
         document.body.classList.remove("blocked")
+        document.documentElement.classList.remove("blocked")
     }
 }
