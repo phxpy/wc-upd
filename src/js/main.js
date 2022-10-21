@@ -17,6 +17,30 @@
     })
 })();
 
+// vacancies
+
+(function() {
+    const vacanciesBtn = document.querySelector(".forums__vacancies");
+    const vacancies = document.querySelector(".vacancies");
+    const vacanciesCloseBtn = document.querySelector(".vacancies__close-btn");
+    const vacanciesBackdrop = document.querySelector(".vacancies__backdrop");
+
+    vacanciesBtn.addEventListener("click", e => {
+        e.preventDefault()
+        vacancies.classList.add("vacancies--open")
+        blockBodyScroll(true)
+    });
+
+    vacanciesCloseBtn.addEventListener("click", closeVacancies)
+    vacanciesBackdrop.addEventListener("click", closeVacancies)
+
+    function closeVacancies() {
+        vacancies.classList.remove("vacancies--open")
+        blockBodyScroll(false)
+    }
+
+})();
+
 // ticker cloning
 
 (function() {

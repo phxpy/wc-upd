@@ -343,7 +343,7 @@
     filter: drop-shadow(-10px 0 0 $green);
 }
 
-.vacations {
+.forums__vacancies {
     position: relative;
     display: block;
     height: 330px;
@@ -371,7 +371,7 @@
     }
 }
 
-.vacations__inner {
+.forums__vacancies-inner {
     @media (min-width: $bp-tablet) {
         display: flex;
         flex-direction: column;
@@ -380,7 +380,7 @@
     }
 }
 
-.vacations__heading {
+.forums__vacancies-heading {
     margin: 0 0 10px;
     font-family: "Druk Cyr", sans-serif;
     color: $main-dark;
@@ -397,7 +397,7 @@
     }
 }
 
-.vacations__heading-number {
+.forums__vacancies-heading-number {
     font-weight: 900;
     font-size: 60px;
     line-height: 1;
@@ -411,7 +411,7 @@
     }
 }
 
-.vacations__heading-text {
+.forums__vacancies-heading-text {
     margin-left: 10px;
     font-weight: 500;
     font-size: 46px;
@@ -428,7 +428,7 @@
     }
 }
 
-.vacations__subheading {
+.forums__vacancies-subheading {
     margin: 0 0 20px;
     font-family: "Inter", sans-serif;
     font-size: 15px;
@@ -443,7 +443,7 @@
     }
 }
 
-.vacations__btn {
+.forums__vacancies-btn {
     display: inline-block;
     width: 120px;
     margin-left: 0;
@@ -451,14 +451,14 @@
     transition: all 0.3s ease-in-out;
 }
 
-.vacations:hover .vacations__btn {
+.forums__vacancies:hover .forums__vacancies-btn {
     @media (min-width: $bp-tablet) {
         margin-left: 120px;
         color: $main-dark;
     }
 }
 
-.vacations__image {
+.forums__vacancies-image {
     position: absolute;
     bottom: 0;
     right: -14px;
