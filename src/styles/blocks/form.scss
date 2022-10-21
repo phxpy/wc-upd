@@ -143,6 +143,61 @@
     padding-top: 30px;
 }
 
+.policy .form__container {
+    padding-top: 45px;
+    padding-bottom: 30px;
+
+    @media (min-width: $bp-tablet) {
+        border-radius: 20px;
+    }
+}
+
+.policy .form__heading {
+    padding-right: 30px;
+}
+
+.form__text-box {
+    height: 90%;
+    padding-right: 30px;
+
+    @media (min-width: $bp-tablet) {
+        height: 560px;
+    }
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $green;
+    opacity: 1;
+}
+
+.simplebar-track.simplebar-vertical {
+    width: 6px;
+    background-color: $light-grey;
+    border-radius: 50px;
+}
+
+.form__text-subheading {
+    margin-bottom: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $main-dark;
+}
+
+.form__text {
+    margin-bottom: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $main-dark;
+}
+
 .form__close-btn {
     position: absolute;
     top: 20px;

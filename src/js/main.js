@@ -261,3 +261,26 @@ function blockBodyScroll(state) {
         document.documentElement.classList.remove("blocked")
     }
 }
+
+// policy
+
+(function() {
+    const policyBtn = document.querySelector(".footer__notification");
+    const policyModal = document.querySelector(".policy");
+
+    policyBtn.addEventListener("click", e => {
+        e.preventDefault()
+        policyModal.classList.add("form--opened")
+        blockBodyScroll(true)
+
+        policyModal.querySelector(".form__backdrop").addEventListener("click", () => {
+            policyModal.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+
+        policyModal.querySelector(".form__close-btn").addEventListener("click", () => {
+            policyModal.classList.remove("form--opened")
+            blockBodyScroll(false)
+        })
+    })
+})();
