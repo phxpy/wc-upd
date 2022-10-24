@@ -14,7 +14,7 @@
         background-position: 0 0;
     }
 
-    @media (min-width: $bp-desktop) {
+    @media (min-width: $bp-desktop) and (min-height: 860px) {
         margin-top: -350px;
         background-image: url("../img/about_bg_laptop.png");
         background-size: cover;
@@ -71,7 +71,7 @@
         width: 600px;
     }
 
-    @media (min-width: $bp-desktop) {
+    @media (min-width: $bp-desktop) and (min-height: 860px) {
         width: 810px;
         left: max(15px, calc((100% - 1680px) / 2))
     }

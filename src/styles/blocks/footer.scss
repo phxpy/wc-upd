@@ -281,7 +281,7 @@
         width: 334px;
     }
 
-    @media (min-width: $bp-desktop) {
+    @media (min-width: $bp-desktop) and (min-height: 860px) {
         top: 0;
         bottom: auto;
         right: 0;
