@@ -284,3 +284,58 @@ function blockBodyScroll(state) {
         })
     })
 })();
+
+// verticals
+
+(function() {
+    const textSwiper = new Swiper('.verticals__text-list-wrap', {
+        // Optional parameters
+        slidesPerView: 1,
+        allowTouchMove: false,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: {
+            el: '.verticals__pagination',
+            type: 'bullets',
+        },
+        breakpoints: {
+            768: {
+                allowTouchMove: false,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                width: 360,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.verticals__pagination',
+                    type: 'bullets',
+                }
+            },
+            1200: {
+                allowTouchMove: false,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                width: 500,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.verticals__pagination',
+                    type: 'bullets',
+                }
+            }
+        }
+    });
+
+    const podiumSwiper = new Swiper('.verticals__list-wrap', {
+        // Optional parameters
+        slidesPerView: "auto",
+        centeredSlides: true,
+        thumbs: {
+            swiper: textSwiper
+        }
+    });
+})();
