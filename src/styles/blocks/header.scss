@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 5;
     padding-top: 26px;
 
     @media (min-width: $bp-tablet) {

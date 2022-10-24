@@ -83,7 +83,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    padding: 0;
+    padding: 0 0 20px;
     list-style: none;
 
     @media (min-width: $bp-tablet) {

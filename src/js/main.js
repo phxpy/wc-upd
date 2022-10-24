@@ -10,6 +10,7 @@ window.addEventListener('resize', () => {
 // menu
 
 (function() {
+    const header = document.querySelector(".header");
     const menu = document.querySelector(".menu");
     const menuToggle = document.querySelector(".header__menu-btn");
 
@@ -17,10 +18,14 @@ window.addEventListener('resize', () => {
         if (!menuToggle.classList.contains("header__menu-btn--closed")) {
             menuToggle.classList.add("header__menu-btn--closed")
             menu.classList.add("menu--opened")
+            header.style.position ="static"
             blockBodyScroll(true)
         } else {
             menuToggle.classList.remove("header__menu-btn--closed")
             menu.classList.remove("menu--opened")
+            setTimeout(() => {
+                header.style.position ="relative"
+            }, 400)
             blockBodyScroll(false)
         }
     })
