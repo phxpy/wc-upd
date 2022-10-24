@@ -200,3 +200,116 @@
     animation: slide 30s infinite linear;
     will-change: transform;
 }
+
+.hero__bees {
+    display: none;
+
+    @media (min-width: $bp-tablet) {
+        position: absolute;
+        display: block;
+        width: 165px;
+        height: 165px;
+        top: calc(50% - 100px);
+        left: calc(50% - 80px);
+    }
+
+    @media (min-width: $bp-laptop) {
+        top: calc(50% - 100px);
+        left: calc(50% - 120px);
+    }
+
+    @media (min-width: $bp-desktop) {
+        width: 258px;
+        height: 258px;
+        top: calc(50% - 300px);
+        left: calc(50%);
+    }
+}
+
+.hero__bee {
+    position: absolute;
+    transition: all 0.7s ease-in-out;
+}
+
+.hero__bee--1 {
+    bottom: 10px;
+    left: 0;
+    width: 17px;
+    animation: bee-fly 2s ease-in-out infinite alternate;
+
+    .hero__bees:hover & {
+        bottom: -50%;
+        left: -10px;
+    }
+
+    @media (min-width: $bp-laptop) {
+        width: 26px;
+    }
+}
+
+.hero__bee--2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 27px;
+    animation: bee-fly-wide 2s ease-in-out infinite alternate;
+
+    .hero__bees:hover & {
+        left: 300%;
+        top: 40%;
+    }
+
+    @media (min-width: $bp-laptop) {
+        width: 43px;
+    }
+}
+
+.hero__bee--3 {
+    bottom: 0;
+    right: 12px;
+    width: 12px;
+    animation: bee-fly 2s ease-in-out infinite alternate;
+
+    .hero__bees:hover & {
+        bottom: -70%;
+        right: -70%;
+    }
+
+    @media (min-width: $bp-laptop) {
+        width: 19px;
+    }
+}
+
+.hero__bee--4 {
+    top: 0;
+    right: 0;
+    width: 16px;
+    animation: bee-fly 2s ease-in-out infinite alternate;
+
+    .hero__bees:hover & {
+        top: -10%;
+        right: 100%;
+    }
+
+    @media (min-width: $bp-laptop) {
+        width: 26px;
+    }
+}
+
+@keyframes bee-fly {
+    from {
+        transform: translateY(5px);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bee-fly-wide {
+    from {
+        transform: translate(-50%, calc(-50% + 10px));
+    }
+    to {
+        transform: translate(-50%, calc(-50% - 10px));
+    }
+}
