@@ -88,6 +88,12 @@
     text-transform: uppercase;
     list-style: none;
 
+    &::-webkit-details-marker,
+    &::marker {
+        display: none;
+        content: "";
+    }
+
     @media (min-width: $bp-tablet) {
         padding: 20px 0;
         font-size: 28px;

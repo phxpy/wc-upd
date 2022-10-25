@@ -111,6 +111,11 @@
     font-size: 0;
     border-radius: 6px;
     background-color: rgba(#fff, 0.05);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(0.9);
+    }
 
     @media (min-width: $bp-tablet) {
         height: 100px;
@@ -253,6 +258,14 @@
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
+
+    @media (min-width: $bp-tablet) {
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: translateY(-12px);
+        }
+    }
 }
 
 .media__item-link {
@@ -468,6 +481,11 @@
         right: auto;
         left: -30px;
         width: 345px;
+        transition: left 0.3s ease-in-out;
+
+        .forums__vacancies:hover & {
+            left: -10px;
+        }
     }
 
     @media (min-width: $bp-widescreen) {

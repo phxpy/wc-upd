@@ -11,6 +11,10 @@
     background-color: $green;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body, html {
     padding: 0;
     margin: 0;

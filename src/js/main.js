@@ -24,10 +24,23 @@ window.addEventListener('resize', () => {
             menuToggle.classList.remove("header__menu-btn--closed")
             menu.classList.remove("menu--opened")
             setTimeout(() => {
-                header.style.position ="relative"
+                header.style.position = "relative"
             }, 400)
             blockBodyScroll(false)
         }
+    })
+
+    const navLinks = Array.from(document.querySelectorAll(".nav__link"))
+
+    navLinks.forEach(navLink => {
+        navLink.addEventListener("click", () => {
+            menuToggle.classList.remove("header__menu-btn--closed")
+            menu.classList.remove("menu--opened")
+            setTimeout(() => {
+                header.style.position = "relative"
+            }, 400)
+            blockBodyScroll(false)
+        })
     })
 })();
 
