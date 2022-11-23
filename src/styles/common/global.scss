@@ -57,6 +57,11 @@ button {
     cursor: pointer;
 }
 
+hr {
+    margin: 25px 0;
+    border: 1px solid #ccc;
+}
+
 .visuallyhidden {
     position: absolute;
     width: 1px;
@@ -96,6 +101,7 @@ button {
     border-radius: 8px;
     background-color: $green;
     transition: color .25s ease-in;
+    text-decoration: none;
     cursor: pointer;
 
     &:hover {

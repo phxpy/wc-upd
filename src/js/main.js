@@ -194,8 +194,8 @@ window.addEventListener('resize', () => {
 (function() {
     const signupBtns = document.querySelectorAll(".btn--signup");
     const signinBtns = document.querySelectorAll(".btn--signin");
-    const formSignup = document.querySelector(".form-signup");
-    const formSignin = document.querySelector(".form-signin");
+    const formSignup = document.querySelector(".form-step-signup");
+    const formSignin = document.querySelector(".form-step-signin");
     const formRestore = document.querySelector(".form-restore");
 
     signupBtns.forEach(btn => {
@@ -215,7 +215,7 @@ window.addEventListener('resize', () => {
             blockBodyScroll(false)
         })
 
-        formSignin.querySelector(".form__controls-forget").addEventListener("click", e => openRestoreForm(e))
+        // formSignin.querySelector(".form__controls-forget").addEventListener("click", e => openRestoreForm(e))
 
         formSignin.querySelector(".form__close-btn").addEventListener("click", () => {
             formSignin.classList.remove("form--opened")
