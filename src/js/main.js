@@ -162,13 +162,15 @@ window.addEventListener('resize', () => {
         // And if we need scrollbar
         pagination: {
             el: ".reviews__pagination",
-            type: "bullets"
+            type: "bullets",
+            clickable: true
         },
         breakpoints: {
             768: {
                 spaceBetween: 40,
                 pagination: {
-                    enabled: false
+                    enabled: false,
+                    clickable: true
                 },
                 navigation: {
                     nextEl: '.reviews__slider-btn--next',
@@ -178,7 +180,8 @@ window.addEventListener('resize', () => {
             1200: {
                 spaceBetween: 1000,
                 pagination: {
-                    enabled: false
+                    enabled: false,
+                    clickable: true
                 },
                 navigation: {
                     nextEl: '.reviews__slider-btn--next',
