@@ -1,5 +1,6 @@
 .footer {
     overflow: hidden;
+    margin-top: 100px;
 
     @media (min-width: $bp-tablet) {
         padding: 0 20px;
@@ -7,7 +8,7 @@
 
     @media (min-width: $bp-laptop) {
         max-width: 1840px;
-        margin: 0 auto;
+        margin: 100px auto 0;
         padding: 0 40px;
     }
 }
