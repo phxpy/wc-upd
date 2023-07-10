@@ -166,6 +166,10 @@ window.addEventListener('resize', () => {
             clickable: true,
             enabled: true
         },
+        navigation: {
+            nextEl: '.reviews__slider-btn--next',
+            prevEl: '.reviews__slider-btn--prev',
+        },
         breakpoints: {
             768: {
                 spaceBetween: 40,
