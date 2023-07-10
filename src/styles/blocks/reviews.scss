@@ -236,7 +236,9 @@
     padding: 30px 20px 60px;
     border-radius: 12px;
     border: 1px solid $main-dark;
-    background-color: rgba(#fff, 0.7);
+    background-color: rgba(#fff, 0.1);
+    backdrop-filter: blur(3px);
+    overflow-x: clip;
 
     @media (min-width: $bp-tablet) {
         top: -100px;

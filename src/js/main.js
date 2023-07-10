@@ -163,7 +163,8 @@ window.addEventListener('resize', () => {
         pagination: {
             el: ".reviews__pagination",
             type: "bullets",
-            clickable: true
+            clickable: true,
+            enabled: true
         },
         breakpoints: {
             768: {
