@@ -224,7 +224,7 @@
 
 .verticals__pagination {
     padding: 0 10px;
-    text-align: left;
+    text-align: center;
     font-size: 14px;
     line-height: 20px;
 
@@ -232,6 +232,7 @@
         grid-column: 1;
         grid-row: 1;
         padding-left: 145px;
+        text-align: left;
     }
 
     @media (min-width: $bp-laptop) {
@@ -278,6 +279,7 @@
     @media (min-width: $bp-tablet) {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px auto;
     }
 
     @media (min-width: $bp-laptop) {
@@ -291,6 +293,7 @@
 
     @media (min-width: $bp-tablet) {
         grid-column: 2;
+        grid-row: 1 / 3;
         width: 360px;
     }
 
@@ -322,4 +325,63 @@
     height: 5px;
     border-radius: 50%;
     background-color: $main-dark;
+}
+
+.verticals__slider-btns {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+
+    @media (min-width: $bp-tablet) {
+        align-self: start;
+        justify-self: start;
+        padding-left: 145px;
+        margin-top: 0;
+    }
+
+    @media (min-width: $bp-laptop) {
+        padding-left: 240px;
+    }
+}
+
+.verticals__slider-btn {
+    display: block;
+    width: 76px;
+    height: 76px;
+    font-size: 0;
+    border: 1px solid $green;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+
+    &:not(.swiper-button-disabled):hover {
+        background-color: $green;
+    }
+}
+
+.verticals__slider-btn--prev {
+    transform: rotate(180deg);
+}
+
+.verticals__slider-btn-icon {
+    width: 12px;
+    stroke: $green;
+    transition: all 0.3s ease-in-out;
+
+    .verticals__slider-btn:not(.swiper-button-disabled):hover & {
+        stroke: #fff;
+    }
+}
+
+.verticals__slider-btn.swiper-button-disabled {
+    border-color: $light-grey;
+    cursor: default;
+
+    & .verticals__slider-btn-icon {
+        stroke: $light-grey;
+    }
 }

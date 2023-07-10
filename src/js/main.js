@@ -323,6 +323,10 @@ function blockBodyScroll(state) {
             type: 'bullets',
             clickable: true
         },
+        navigation: {
+            nextEl: '.verticals__slider-btn--next',
+            prevEl: '.verticals__slider-btn--prev',
+        },
         breakpoints: {
             768: {
                 allowTouchMove: false,
@@ -336,7 +340,11 @@ function blockBodyScroll(state) {
                     el: '.verticals__pagination',
                     type: 'bullets',
                     clickable: true
-                }
+                },
+                navigation: {
+                    nextEl: '.verticals__slider-btn--next',
+                    prevEl: '.verticals__slider-btn--prev',
+                },
             },
             1200: {
                 allowTouchMove: false,
@@ -350,7 +358,11 @@ function blockBodyScroll(state) {
                     el: '.verticals__pagination',
                     type: 'bullets',
                     clickable: true
-                }
+                },
+                navigation: {
+                    nextEl: '.verticals__slider-btn--next',
+                    prevEl: '.verticals__slider-btn--prev',
+                },
             }
         }
     });
@@ -362,7 +374,11 @@ function blockBodyScroll(state) {
         slideToClickedSlide: true,
         thumbs: {
             swiper: textSwiper
-        }
+        },
+        navigation: {
+            nextEl: '.verticals__slider-btn--next',
+            prevEl: '.verticals__slider-btn--prev',
+        },
     });
 
     const bullets = Array.from(document.querySelectorAll(".swiper-pagination-bullet"))
@@ -371,122 +387,4 @@ function blockBodyScroll(state) {
             podiumSwiper.slideTo(index)
         })
     })
-
-    let deltaY
-    let sliderVisible
-
-    window.onwheel = function(e) {
-        deltaY = e.deltaY;
-    }
-
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchmove', handleTouchMove, false);
-
-    let xDown = null;
-    let yDown = null;
-
-    let xDiff = 0
-    let yDiff = 0
-
-    function getTouches(evt) {
-        return evt.touches || evt.originalEvent.touches;
-    }
-
-    function handleTouchStart(evt) {
-        const firstTouch = getTouches(evt)[0];
-        xDown = firstTouch.clientX;
-        yDown = firstTouch.clientY;
-    };
-
-    function handleTouchMove(evt) {
-        if ( ! xDown || ! yDown ) {
-            return;
-        }
-
-        let xUp = evt.touches[0].clientX;
-        let yUp = evt.touches[0].clientY;
-
-        xDiff = xDown - xUp;
-        yDiff = yDown - yUp;
-
-        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-            if ( xDiff > 0 ) {
-                /* right swipe */
-            } else {
-                /* left swipe */
-            }
-        } else {
-            if ( yDiff > 0 && sliderVisible && podiumSwiper.realIndex !== 6) {
-                podiumSwiper.slideNext()
-            } else if (yDiff < 0 && sliderVisible && podiumSwiper.realIndex !== 0) {
-                podiumSwiper.slidePrev()
-            } else if ( yDiff > 0 && sliderVisible && podiumSwiper.realIndex === 6) {
-                unlockScrolling()
-                window.scrollBy(0, 200)
-                document.removeEventListener('touchmove', handleTouchMove, false);
-            } else if (yDiff < 0 && sliderVisible && podiumSwiper.realIndex === 0) {
-                unlockScrolling()
-                window.scrollBy(0, -200)
-                document.removeEventListener('touchmove', handleTouchMove, false);
-            }
-        }
-
-        /* reset values */
-        xDown = null;
-        yDown = null;
-    };
-
-    // define an observer instance
-    const observer = new IntersectionObserver(onIntersection, {
-        root: null, // default is the viewport
-        threshold: 1 // percentage of target's visible area. Triggers "onIntersection"
-    })
-
-    // callback is called on intersection change
-    function onIntersection(entries, opts) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && deltaY > 0 || yDiff > 0) {
-                sliderVisible = true
-                wheelHandle()
-            } else if (entry.isIntersecting && deltaY < 0 || yDiff < 0) {
-                sliderVisible = true
-                wheelHandle()
-            } else if (!entry.isIntersecting) {
-                sliderVisible = false
-                unlockScrolling()
-            }
-        })
-    }
-
-    function wheelHandle() {
-        document.body.classList.add("blocked")
-        document.documentElement.classList.add("blocked")
-
-        function handleSwiperScroll(e) {
-            if (podiumSwiper.realIndex !== 6 && deltaY > 0) {
-                podiumSwiper.slideNext()
-            } else if (podiumSwiper.realIndex !== 0 && deltaY < 0) {
-                podiumSwiper.slidePrev()
-            } else if (podiumSwiper.realIndex === 6 && deltaY > 0) {
-                unlockScrolling()
-                window.scrollBy(0, 200)
-                window.removeEventListener("wheel", handleSwiperScroll)
-            } else if (podiumSwiper.realIndex === 0 && deltaY < 0) {
-                unlockScrolling()
-                window.scrollBy(0, -200)
-                window.removeEventListener("wheel", handleSwiperScroll)
-            }
-        }
-
-        window.addEventListener("wheel", handleSwiperScroll)
-        document.addEventListener('touchmove', handleTouchMove, false);
-    }
-
-    function unlockScrolling() {
-        document.body.classList.remove("blocked")
-        document.documentElement.classList.remove("blocked")
-    }
-
-    // Use the observer to observe an element
-    observer.observe( document.querySelector('.verticals') )
 })();
