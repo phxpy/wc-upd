@@ -72,6 +72,10 @@
         transform-origin: left bottom;
     }
 
+    &.swiper-slide-active .verticals__item-heading {
+        left: 30px;
+    }
+
     & .verticals__item-podium {
         width: 525px;
     }
@@ -135,7 +139,7 @@
     }
 
     &.swiper-slide-active .verticals__item-heading {
-        left: -270px;
+        left: -220px;
     }
 
     & .verticals__item-podium {
@@ -177,7 +181,7 @@
     }
 
     &.swiper-slide-active .verticals__item-heading {
-        left: -270px;
+        left: -210px;
     }
 
     & .verticals__item-podium {
