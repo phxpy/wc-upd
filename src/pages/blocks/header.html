@@ -11,14 +11,56 @@
                 <span class="header__menu-btn-icon-line header__menu-btn-icon-line--bottom"></span>
             </span>
         </button>
-        <button class="header__lang">
-            Сменить язык
-            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h22v22H0V0Z" fill="#EDEDED"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.335h22V22H0V7.335Z" fill="#0039A6"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14.665h22V22H0v-7.335Z" fill="#D52B1E"/>
-            </svg>
-        </button>
+        <ul class="header__langs">
+            <li class="header__langs-item">
+                <a class="header__lang">
+                    Русский язык
+                    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h22v22H0V0Z" fill="#EDEDED" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7.335h22V22H0V7.335Z" fill="#0039A6" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14.665h22V22H0v-7.335Z" fill="#D52B1E" />
+                    </svg>
+                </a>
+            </li>
+            <li class="header__langs-item">
+                <a class="header__lang" href="#">
+                    Украинский язык
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2">
+                        <path fill="#005bbb" d="M0 0h2v1H0" />
+                        <path fill="#ffd500" d="M0 1h2v1H0" />
+                    </svg>
+                </a>
+            </li>
+            <li class="header__langs-item">
+                <a class="header__lang" href="#">
+                    Английский язык
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+                        <path fill="#00247d" d="M0 0h300v300H0z" />
+                        <path stroke="#fff" stroke-width="60" d="m0 0 300 300m0-300L0 300" />
+                        <path stroke="#cf142b" stroke-width="40" d="m0 0 300 300m0-300L0 300" />
+                        <path fill="#fff" d="M150 150v-30L30 0H0zh30L300 30V0zv30l120 120h30zh-30L0 270v30z" />
+                        <path stroke="#fff" stroke-width="100" d="M150 0v300M0 150h300" />
+                        <path stroke="#cf142b" stroke-width="60" d="M150 0v300M0 150h300" />
+                    </svg>
+                </a>
+            </li>
+            <li class="header__langs-item">
+                <a class="header__lang" href="#">
+                    Испанский язык
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 500 500">
+                        <g clip-path="url(#a)">
+                            <path fill="#C60B1E" d="M750 0H0v500h750V0Z" />
+                            <path fill="#FFC400" d="M750 125H0v250h750V125Z" />
+                        </g>
+                        <defs>
+                            <clipPath id="a">
+                                <path fill="#fff" d="M0 0h500v500H0z" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+            </li>
+        </ul>
         <ul class="header__socials">
             <li class="header__socials-item">
                 <a class="header__socials-link" href="#">Вконтакте</a>
